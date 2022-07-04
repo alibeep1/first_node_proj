@@ -1,6 +1,9 @@
-function sayHello(name){
-    console.log('Hello ' + name);
-}
+const { default: getMAC } = require('getmac');
+console.log('Mac address: ' + getMAC());
 
-sayHello('Ali');
-// console.log(Window);
+//instantiating a module or 'class')
+const log = require('./logger.js');
+
+
+//view components of the module!
+log('Hey there');
