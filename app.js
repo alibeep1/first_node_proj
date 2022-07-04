@@ -1,9 +1,18 @@
-const { default: getMAC } = require('getmac');
-console.log('Mac address: ' + getMAC());
-
-//instantiating a module or 'class')
-const log = require('./logger.js');
+const { Console } = require('console');
+const os = require('os');
 
 
-//view components of the module!
-log('Hey there');
+
+
+
+function foo(){
+    // do stuff
+    var totalMem = os.totalmem();
+    var freeMem = os.freemem();
+    var percentageFreeMem = 100 *(1.00 - (freeMem / totalMem));
+    console.log(`${freeMem} free of a total of ${totalMem}, a memroy consumption of ${percentageFreeMem} %`);
+
+    setTimeout(foo, 3000 );
+}
+
+foo();
