@@ -1,18 +1,5 @@
-const { Console } = require('console');
-const os = require('os');
+const fs = require('fs');
 
-
-
-
-
-function foo(){
-    // do stuff
-    var totalMem = os.totalmem();
-    var freeMem = os.freemem();
-    var percentageFreeMem = 100 *(1.00 - (freeMem / totalMem));
-    console.log(`${freeMem} free of a total of ${totalMem}, a memroy consumption of ${percentageFreeMem} %`);
-
-    setTimeout(foo, 3000 );
-}
-
-foo();
+const path = "F:/AUC/Summer 22'/1_Intro_to_Cloud_Computing";
+const files = fs.readdirSync(path);
+console.log(files);
