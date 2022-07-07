@@ -1,11 +1,20 @@
-//simulate logging messages in the cloud
+
+// this is a class
+const EventEmitter = require('events');
 
 //endpoint
 var url = 'http://mylogger.io/log';
 
-function log(message){
+
+class Logger extends EventEmitter{
+    log(message){
     // Send http request
     console.log(message);
+
+    // Raise an event
+    this.emit('messageLogged', {id: 1, url: url});
+    }
+
 }
 
-module.exports = log;
+module.exports = Logger;

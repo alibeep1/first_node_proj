@@ -1,14 +1,11 @@
-const fs = require('fs');
+const Logger = require('./logger');
 
-const path = "F:/AUC/Summer 22'/1_Intro_to_Cloud_Computing";
-// const files = fs.readdirSync(path);
-// console.log(files);
+const logger = new Logger();
 
-fs.readdir(path, function(err, files){
-    if (err) {
-        console.log("Error: " + err);
-    }
-    else{
-        console.log("Result: " + files)
-    }
+logger.on('messageLogged', (eventArg) => {
+    console.log('Listener called!', eventArg);
 })
+
+// emitter.emit('messageLogged', {id: 1, url: 'https://'});
+logger.log('message');
+
